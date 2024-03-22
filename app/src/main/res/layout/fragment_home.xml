@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+
+    <TextView
+        android:id="@+id/distanceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/Distance"
+        android:textColor="#FF2121"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/timeText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Spinner
+        android:id="@+id/distanceSpinner"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/timeInputSec"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/distanceText" />
+
+    <EditText
+        android:id="@+id/customDistance"
+        android:layout_width="67dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="93dp"
+        android:background="@null"
+        android:ems="10"
+        android:fontFamily="@font/poppins"
+        android:hint="@string/meters"
+        android:textColorHint="#888888"
+        android:inputType="number"
+        android:textColor="#888888"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/timeInputSec"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/distanceText" />
+
+    <TextView
+        android:id="@+id/timeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/Time"
+        android:textColor="#FE3D3D"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/timeInputHrs"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <NumberPicker
+        android:id="@+id/timeInputSec"
+        android:layout_width="46dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeText" />
+
+    <NumberPicker
+        android:id="@+id/timeInputMin"
+        android:layout_width="46dp"
+        android:layout_height="60dp"
+        android:ems="10"
+        app:layout_constraintBottom_toBottomOf="@+id/timeInputSec"
+        app:layout_constraintEnd_toStartOf="@+id/timeInputSec" />
+
+    <NumberPicker
+        android:id="@+id/timeInputHrs"
+        android:layout_width="46dp"
+        android:layout_height="60dp"
+        android:ems="10"
+        app:layout_constraintBottom_toBottomOf="@+id/timeInputMin"
+        app:layout_constraintEnd_toStartOf="@+id/timeInputMin" />
+
+    <LinearLayout
+        android:id="@+id/speedLayout"
+        android:layout_width="147dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/paceLayout"
+        app:layout_constraintStart_toStartOf="@+id/speedInput"
+        app:layout_constraintTop_toBottomOf="@+id/distanceSpinner">
+
+        <TextView
+            android:id="@+id/speedText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/Speed"
+            android:textColor="#FE3D3D"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/speedSpinner"
+            android:layout_width="85dp"
+            android:layout_height="27dp"
+            android:layout_marginStart="5dp"
+            android:background="@null"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/km_h"
+            android:textSize="14sp"
+            android:textColor="#888888"
+            app:layout_constraintBottom_toBottomOf="@+id/speedText"
+            app:layout_constraintStart_toEndOf="@+id/speedText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/paceLayout"
+        android:layout_width="123dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="@+id/paceInputMin"
+        app:layout_constraintTop_toBottomOf="@+id/timeInputSec">
+
+        <TextView
+            android:id="@+id/paceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/Pace"
+            android:textColor="#FE3D3D"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/paceSpinner"
+            android:layout_width="68dp"
+            android:layout_height="27dp"
+            android:layout_marginStart="5dp"
+            android:background="@null"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/min_km"
+            android:textColor="#888888" />
+    </LinearLayout>
+
+
+    <EditText
+        android:id="@+id/speedInput"
+        android:layout_width="144dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:fontFamily="@font/poppins"
+        android:inputType="numberDecimal"
+
+        android:text="@string/_0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/speedLayout" />
+
+    <NumberPicker
+        android:id="@+id/paceInputSec"
+        android:layout_width="69dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:inputType="time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paceLayout" />
+
+    <NumberPicker
+        android:id="@+id/paceInputMin"
+        android:layout_width="69dp"
+        android:layout_height="60dp"
+        android:ems="10"
+        android:inputType="time"
+        app:layout_constraintBottom_toBottomOf="@+id/paceInputSec"
+        app:layout_constraintEnd_toStartOf="@+id/paceInputSec" />
+
+    <Spinner
+        android:id="@+id/splitsText"
+        android:layout_width="159dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@null"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Splits/400m"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/speedInput" />
+
+    <TextView
+        android:id="@+id/splitTimeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Split Time"
+        android:textColor="#FE3D3D"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/splitsText"
+        app:layout_constraintStart_toStartOf="@+id/paceInputMin"
+        tools:layout_marginTop="5dp" />
+
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="408dp"
+        android:layout_height="476dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/splitTimeText" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
